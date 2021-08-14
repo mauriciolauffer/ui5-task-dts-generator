@@ -1,6 +1,6 @@
 {
   "name": "ui5-task-dts-generator",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Task for ui5-builder which generates d.ts files (TypeScript type declaration file)",
   "author": "Mauricio Lauffer",
   "license": "MIT",
