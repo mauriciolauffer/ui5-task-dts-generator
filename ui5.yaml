@@ -1,0 +1,7 @@
+specVersion: '2.5'
+kind: extension
+type: task
+metadata:
+  name: ui5-task-dts-generator
+task:
+  path: "lib/index.js"

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2020",
+    "noEmit": true,
+    "checkJs": true,
+    "strict": true,
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "skipLibCheck": true,
+    "types": [
+      "@types/node"
+    ]
+  },
+  "include": ["lib/**/*"]
+}

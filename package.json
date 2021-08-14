@@ -1,0 +1,45 @@
+{
+  "name": "ui5-task-dts-generator",
+  "version": "0.0.1",
+  "description": "Task for ui5-builder which generates d.ts files (TypeScript type declaration file)",
+  "author": "Mauricio Lauffer",
+  "license": "MIT",
+  "homepage": "https://github.com/mauriciolauffer/ui5-task-dts-generator#readme",
+  "private": false,
+  "main": "lib/index.js",
+  "files": [
+    "lib/**",
+    "ui5.yaml"
+  ],
+  "keywords": [
+    "ui5",
+    "task",
+    "builder",
+    "tooling",
+    "dts",
+    "typescript",
+    "types"
+  ],
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "eslint lib",
+    "lint:fix": "eslint lib --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauriciolauffer/ui5-task-dts-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mauriciolauffer/ui5-task-dts-generator/issues"
+  },
+  "dependencies": {
+    "@ui5/dts-generator": "^2.3.0",
+    "@ui5/fs": "^2.0.6",
+    "@ui5/logger": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.13",
+    "eslint": "^7.7.0",
+    "eslint-config-mlauffer-nodejs": "^1.0.0"
+  }
+}
