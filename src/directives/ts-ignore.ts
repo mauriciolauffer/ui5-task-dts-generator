@@ -1,5 +1,3 @@
-'use strict';
-
 const KNOWN_ISSUES = {
   TEMP_MISSING_LIBRARIES: 'Temporary ignore until other libraries are compiled',
   GENERAL_STATIC_INHERITANCE_MISMATCH: 'static inheritance overwrite mistmatch',
@@ -13,7 +11,7 @@ const KNOWN_ISSUES = {
  * This directive is used to brute force "solve" hard problems.
  * Only use this as a last resort...
  */
-const fqnToIgnore = {
+export const fqnToIgnore: Record<string, string> = {
   // "sap.f.GridList": KNOWN_ISSUES.TEMP_MISSING_LIBRARIES,
 
   // STATIC getMetadata overwrite mismatch.
@@ -46,21 +44,18 @@ const fqnToIgnore = {
 
   // Interface implementation related issues
   'sap.f.GridList.getGridLayoutConfiguration':
-    'error TS2416: Property \'getGridLayoutConfiguration\' in type \'GridList\' is not assignable to the same property in base type \'IGridConfigurable\'. ' +
-    '  Type \'undefined\' is not assignable to type \'() => GridLayoutBase\'',
+    "error TS2416: Property 'getGridLayoutConfiguration' in type 'GridList' is not assignable to the same property in base type 'IGridConfigurable'. " +
+    '  Type ' +
+    "'undefined' is not assignable to type '() => GridLayoutBase'",
   'sap.ui.layout.cssgrid.CSSGrid':
-    'error TS2420: Class \'CSSGrid\' incorrectly implements interface \'IGridConfigurable\'.' +
-    'Type \'CSSGrid\' is missing the following properties from type \'IGridConfigurable\': getGridDomRefs, getGridLayoutConfiguration',
+    "error TS2420: Class 'CSSGrid' incorrectly implements interface 'IGridConfigurable'." +
+    "Type 'CSSGrid' is missing the following properties from type 'IGridConfigurable': getGridDomRefs, getGridLayoutConfiguration",
   'sap.f.GridList':
-    'error TS2420: Class \'GridList\' incorrectly implements interface \'IGridConfigurable\'.' +
-    'Type \'GridList\' is missing the following properties from type \'IGridConfigurable\': getGridDomRefs, getGridLayoutConfiguration',
-  'sap.ui.base.Event':
-    'error TS2420: Class \'Event\' incorrectly implements interface \'Poolable\'.',
+    "error TS2420: Class 'GridList' incorrectly implements interface 'IGridConfigurable'." +
+    "Type 'GridList' is missing the following properties from type 'IGridConfigurable': getGridDomRefs, getGridLayoutConfiguration",
+  'sap.ui.base.Event': "error TS2420: Class 'Event' incorrectly implements interface 'Poolable'.",
   'sap.m.ResponsiveScale':
-    'error TS2420: Class \'ResponsiveScale\' incorrectly implements interface \'IScale\'.' +
-    '  Type \'ResponsiveScale\' is missing the following properties from type \'IScale\': calcNumberOfTickmarks, getLabel, handleResize'
-};
-
-module.exports = {
-  fqnToIgnore
+    "error TS2420: Class 'ResponsiveScale' incorrectly implements interface 'IScale'." +
+    '  Type ' +
+    "'ResponsiveScale' is missing the following properties from type 'IScale': calcNumberOfTickmarks, getLabel, handleResize"
 };

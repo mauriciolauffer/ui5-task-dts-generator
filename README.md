@@ -34,8 +34,8 @@ npm install ui5-task-dts-generator --save-dev
 ```yaml
 builder:
   customTasks:
-  - name: ui5-task-dts-generator
-    afterTask: generateResourcesJson
+    - name: ui5-task-dts-generator
+      afterTask: generateResourcesJson
 ```
 
 ## Author

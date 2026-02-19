@@ -1,36 +1,40 @@
 {
   "name": "ui5-task-dts-generator",
   "version": "1.0.0",
-  "description": "Task for ui5-builder which generates d.ts files (TypeScript type declaration file)",
-  "author": "Mauricio Lauffer",
-  "license": "MIT",
-  "homepage": "https://github.com/mauriciolauffer/ui5-task-dts-generator#readme",
   "private": false,
-  "main": "lib/index.js",
-  "files": [
-    "lib/**",
-    "ui5.yaml"
-  ],
+  "description": "Task for ui5-builder which generates d.ts files (TypeScript type declaration file)",
   "keywords": [
-    "ui5",
-    "task",
     "builder",
-    "tooling",
     "dts",
+    "task",
+    "tooling",
+    "types",
     "typescript",
-    "types"
+    "ui5"
   ],
-  "scripts": {
-    "test": "npm run lint",
-    "lint": "eslint lib",
-    "lint:fix": "eslint lib --fix"
+  "homepage": "https://github.com/mauriciolauffer/ui5-task-dts-generator#readme",
+  "bugs": {
+    "url": "https://github.com/mauriciolauffer/ui5-task-dts-generator/issues"
   },
+  "license": "MIT",
+  "author": "Mauricio Lauffer",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mauriciolauffer/ui5-task-dts-generator.git"
   },
-  "bugs": {
-    "url": "https://github.com/mauriciolauffer/ui5-task-dts-generator/issues"
+  "files": [
+    "lib/**",
+    "ui5.yaml"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "pnpm run build",
+    "test": "pnpm run build && pnpm run lint && pnpm run fmt:check && vitest run",
+    "lint": "eslint src test",
+    "lint:fix": "eslint src test --fix",
+    "fmt": "oxfmt .",
+    "fmt:check": "oxfmt --check ."
   },
   "dependencies": {
     "@ui5/dts-generator": "^2.3.0",
@@ -39,7 +43,13 @@
   },
   "devDependencies": {
     "@types/node": "^16.9.1",
-    "eslint": "^7.7.0",
-    "eslint-config-mlauffer-nodejs": "^1.0.0"
+    "@typescript-eslint/eslint-plugin": "^8.56.0",
+    "@typescript-eslint/parser": "^8.56.0",
+    "eslint": "^8.57.1",
+    "eslint-config-mlauffer-nodejs": "^1.4.6",
+    "oxfmt": "^0.33.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   }
 }

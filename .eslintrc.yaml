@@ -1,4 +1,11 @@
 root: true
+parser: '@typescript-eslint/parser'
+plugins:
+  - '@typescript-eslint'
 extends:
   - eslint-config-mlauffer-nodejs
-ignorePatterns: ['lib/directives/*']
+  - plugin:@typescript-eslint/recommended
+ignorePatterns: ['lib/**/*', 'src/directives/*']
+rules:
+  space-before-function-paren: off
+  '@typescript-eslint/no-explicit-any': off
