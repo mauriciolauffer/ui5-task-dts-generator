@@ -1,13 +1,13 @@
 import {jsonToDTS} from '@ui5/dts-generator';
-import {resourceFactory} from '@ui5/fs';
+import {resourceFactory, DuplexCollection, AbstractReader} from '@ui5/fs';
 import {getLogger} from '@ui5/logger';
 import directives from './directives';
 
 const logger = getLogger('builder:tasks:dtsGenerator');
 
 interface TaskParameters {
-  workspace: any;
-  dependencies: any;
+  workspace: DuplexCollection;
+  dependencies: AbstractReader;
   taskUtil: any;
   options: {
     projectName: string;
@@ -21,7 +21,10 @@ interface TaskParameters {
  * @param {TaskParameters} parameters Parameters
  * @returns {Promise<void>} Promise resolving once data has been written
  */
-async function dtsGenerator({workspace, options}: TaskParameters): Promise<void> {
+async function dtsGenerator({
+  workspace,
+  options
+}: TaskParameters): Promise<void> {
   let apiJsonData;
   const resources = await workspace.byGlob('**/designtime/api.json');
   const namespace = options.projectNamespace?.split('/')[0];
