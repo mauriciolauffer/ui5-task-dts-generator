@@ -4,4 +4,4 @@ type: task
 metadata:
   name: ui5-task-dts-generator
 task:
-  path: "lib/index.js"
+  path: 'lib/index.js'

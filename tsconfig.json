@@ -1,17 +1,16 @@
 {
   "compilerOptions": {
     "module": "CommonJS",
-    "target": "ES2020",
-    "noEmit": true,
-    "checkJs": true,
+    "moduleResolution": "Node",
+    "target": "ES2022",
+    "outDir": "lib",
+    "rootDir": "src",
     "strict": true,
-    "allowJs": true,
-    "declaration": true,
-    "emitDeclarationOnly": false,
+    "esModuleInterop": true,
     "skipLibCheck": true,
-    "types": [
-      "@types/node"
-    ]
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true
   },
-  "include": ["lib/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "lib"]
 }

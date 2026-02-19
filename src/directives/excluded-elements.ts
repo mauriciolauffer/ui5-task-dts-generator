@@ -1,6 +1,4 @@
-'use strict';
-
-const badInterfaces = [
+export const badInterfaces: string[] = [
   // All 32 cases of implementing this interface are incorrect
   'sap.ui.core.IFormContent',
 
@@ -14,16 +12,10 @@ const badInterfaces = [
   'sap.ui.layout.cssgrid.IGridItemLayoutData'
 ];
 
-const badMethods = ['createPageObjects'];
+export const badMethods: string[] = ['createPageObjects'];
 
-const badSymbols = [
+export const badSymbols: string[] = [
   // typo: this class extends: "sap.ui.core.ManagedObject"
   //       but it should extend "sap.ui.base.ManagedObject" which actually exists.
   'sap.ui.core.InvisibleMessage'
 ];
-
-module.exports = {
-  badInterfaces,
-  badMethods,
-  badSymbols
-};
